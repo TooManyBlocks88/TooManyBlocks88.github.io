@@ -1,0 +1,56 @@
+/* Šriftai */
+:root {
+  --default-font: "Trebuchet MS",  sans-serif;
+  --heading-font: "Georgia",  serif;
+  --nav-font: "Lato",  sans-serif;
+  --btn-color: #920303;
+}
+
+/* Antraščių stiliai */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  color: #8b4513;
+  font-weight: 600;  
+}
+h1 {font-size: 36px}
+h2 {font-size: 30px}
+h3 {font-size: 24px}
+h4 {font-size: 20px}
+h5 {font-size: 18px}
+h6 {font-size: 16px}
+
+/* Pastraipų stiliai */
+p {
+    font-family: var(--default-font);
+    font-size: 16px;
+    line-height: 1.6;
+    color: #247a78;
+    font-weight: 400;
+}
+
+/* Mygtukai */
+button, .btn {
+    background-color: var(--btn-color);
+    color: var(--btn-color);
+    /* border: 2px solid #039290; */
+    border-radius: 20px;
+    padding: 10px 22px;
+    /* transition: 0.3s; */
+}
+
+button:hover, .btn:hover {
+    background-color: #8b4513;
+    border-color: #8b4513;
+    color: #ffffff;
+}
+
+button:active, .btn:active {
+    transform: scale(0.90);
+}
+
+/*Nuorodos*/
