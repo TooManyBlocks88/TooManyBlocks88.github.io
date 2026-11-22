@@ -101,3 +101,66 @@ button:active, .btn:active {
     width: 52px;
     height: 52px;
 }
+
+/* Nenumeruotas sąrašas */
+ul {
+    list-style-type: square;
+    padding-left: 25px;
+}
+
+ul > li {
+    margin-bottom: 10px;
+}
+
+/* Įdėtinis nenumeruotas sąrašas */
+ul ul {
+    list-style-type: circle;
+    padding-left: 25px;
+}
+
+ul ul li {
+    color: #247A78;
+}
+
+/* Numeruotas sąrašas */
+ol {
+    list-style-type: upper-roman;
+    padding-left: 30px;
+}
+
+ol li {
+    margin-bottom: 10px;
+}
+
+/* Lentelė */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead th {
+    background-color: #345995;
+    color: #ffffff;
+}
+
+/* Visi lentelės langeliai */
+.table th,
+.table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #cccccc;
+}
+
+/* Pakaitinės eilučių spalvos */
+.table tbody tr:nth-child(even) td {
+    background-color: #d9dee3;
+}
+
+.table tbody tr:nth-child(odd) td{
+    background-color: #efeff0;
+}
+
+/* Eilutės užvedimo efektas */
+.table tbody tr:hover td {
+    background-color: #85a4c9;
+}
