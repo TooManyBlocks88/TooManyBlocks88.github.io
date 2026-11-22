@@ -164,3 +164,303 @@ ol li {
 .table tbody tr:hover td {
     background-color: #85a4c9;
 }
+
+/* =========================================================
+   10 darbas
+   ========================================================= */
+/* Kompetencijų pažangos modulis */
+
+/* Patirties taškų, lygio ir rango informacijos blokas*/
+
+.xp-summary-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #920303;
+    border-top: 5px solid #920303;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(1, 1, 1, 0.15);
+}
+
+.xp-stat-item {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-left: 4px solid #345995;
+    border-radius: 10px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Skirtingos kairės juostos spalvos kiekvienam rodikliui */
+.xp-stat-item:nth-child(1) {
+    border-left-color: #920303;
+}
+
+.xp-stat-item:nth-child(2) {
+    border-left-color: #345995;
+}
+
+.xp-stat-item:nth-child(3) {
+    border-left-color: #247a78;
+}
+
+.xp-stat-label {
+    font-family: var(--default-font);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #45505b;
+    margin-bottom: 8px;
+}
+
+.xp-stat-value {
+    font-family: var(--heading-font);
+    font-size: 24px;
+    font-weight: 700;
+    color: #8b4513;
+}
+
+/* Rango išskyrimas ženkliuko stiliumi */
+.xp-rank-badge {
+    font-family: var(--default-font);
+    font-size: 18px;
+    color: #247a78;
+    background-color: #e0f2f1;
+    padding: 4px 16px;
+    border-radius: 20px;
+    border: 1px solid #247a78;
+}
+
+/* Prisitaikymas prie mažesnių ekranų */
+@media (max-width: 991px) {
+    .xp-summary-block {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+}
+
+/* Patirties taškų progreso juosta ir įgūdžių statistika */
+
+.xp-progress-section {
+    grid-column: 1 / -1;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-left: 4px solid #8b4513;
+    border-radius: 10px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Viršutinė eilutė virš progreso juostos */
+.xp-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #45505b;
+}
+
+.xp-progress-numbers {
+    color: #8b4513;
+    font-weight: 700;
+}
+
+/* Progreso juostos fonas (likusi dalis) */
+.xp-progress-track {
+    width: 100%;
+    height: 18px;
+    background-color: #eaf0f7;
+    border: 1px solid #cccccc;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* Užpildyta progreso juostos dalis */
+.xp-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #345995 0%, #247a78 100%);
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+/* Trys statistikos užrašai po juosta */
+.skills-stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid #e5e5e5;
+    font-size: 14px;
+    color: #272829;
+}
+
+.skill-stat-label strong {
+    color: #920303;
+    font-size: 15px;
+    margin-left: 4px;
+}
+
+/* Prisitaikymas prie mažesnių ekranų */
+@media (max-width: 768px) {
+    .skills-stats-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
+
+/* Pagrindinis lentos tinklelis */
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+    margin-top: 20px;
+}
+
+/* Atskiros kategorijos blokas */
+.kanban-column {
+    background-color: #f8f9fa;
+    border: 1px solid #920303;
+    border-top: 5px solid #920303;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(1, 1, 1, 0.15);
+    min-height: 360px;
+}
+
+/* Skirtingos viršutinės juostos spalvos kategorijoms atskirti */
+.kanban-column.column-planned {
+    border-top-color: #8b4513;
+}
+
+.kanban-column.column-learning {
+    border-top-color: #345995;
+}
+
+.kanban-column.column-done {
+    border-top-color: #247a78;
+}
+
+/* Stulpelio antraštė */
+.kanban-column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.kanban-column-header h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.column-count {
+    background-color: #eaf0f7;
+    color: #345995;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+}
+
+/* Kortelių konteineris stulpelio viduje */
+.kanban-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Įgūdžio kortelė */
+.skill-card {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-left: 4px solid #920303;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(1, 1, 1, 0.18);
+}
+
+.skill-card .skill-title {
+    font-family: var(--default-font);
+    font-size: 16px;
+    font-weight: 600;
+    color: #272829;
+    margin: 0 0 12px 0;
+}
+
+/* Kortelės apatinė eilutė (būsena + XP) */
+.skill-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Būsenos ženkliukas */
+.skill-status {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.status-planned {
+    background-color: #f5ebe0;
+    color: #8b4513;
+}
+
+.status-learning {
+    background-color: #eaf0f7;
+    color: #345995;
+}
+
+.status-done {
+    background-color: #e0f2f1;
+    color: #247a78;
+}
+
+/* XP taškų ženkliukas */
+.skill-xp {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #920303;
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+/* Prisitaikymas prie mažesnių ekranų (planšetės, telefonai) */
+@media (max-width: 991px) {
+    .kanban-board {
+        grid-template-columns: 1fr;
+    }
+
+    .kanban-column {
+        min-height: auto;
+    }
+}
