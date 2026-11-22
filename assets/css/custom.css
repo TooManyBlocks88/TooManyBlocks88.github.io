@@ -464,3 +464,119 @@ ol li {
         min-height: auto;
     }
 }
+
+/* Papildoma užduotis
+   1. Animuotas gradientinis fonas „Paslaugų“ skiltyje */
+
+#services.section {
+    background: linear-gradient(-45deg, #f5ebe0, #d6e4f0, #d4ecea, #f7e1e1);
+    background-size: 400% 400%;
+    animation: servicesGradientMove 10s ease infinite;
+}
+
+@keyframes servicesGradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 2. Animuotos CSS figūros „Apie“ skiltyje */
+
+#about.section {
+    position: relative;
+}
+
+/* Užtikrinti, kad Apie būtų virš fono figūrų */
+#about .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Bendras figūrų sluoksnis */
+.about-shapes {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.css-shape {
+    position: absolute;
+    opacity: 0.22;
+}
+
+/* 1. Apskritimas (Floating) */
+.shape-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #247a78;
+    top: 12%;
+    left: 4%;
+    animation: floatShape 7s ease-in-out infinite;
+}
+
+/* 2. Trikampis (Rotating) */
+.shape-triangle {
+    width: 0;
+    height: 0;
+    border-left: 45px solid transparent;
+    border-right: 45px solid transparent;
+    border-bottom: 80px solid #920303;
+    bottom: 10%;
+    right: 5%;
+    animation: rotateShape 12s linear infinite;
+}
+
+/* 3. Rombas (Scaling) */
+.shape-diamond {
+    width: 65px;
+    height: 65px;
+    background-color: #345995;
+    border-radius: 10px;
+    top: 18%;
+    right: 8%;
+    animation: scaleShape 5s ease-in-out infinite;
+}
+
+/* Judėjimo animacija (Floating) */
+@keyframes floatShape {
+    0% {
+        transform: translate(0, 0);
+    }
+    33% {
+        transform: translate(25px, -20px);
+    }
+    66% {
+        transform: translate(-15px, 20px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Sukimosi animacija (Rotating) */
+@keyframes rotateShape {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Didėjimo animacija (Scaling) */
+@keyframes scaleShape {
+    0%, 100% {
+        transform: rotate(45deg) scale(0.85);
+    }
+    50% {
+        transform: rotate(45deg) scale(1.25);
+    }
+}
